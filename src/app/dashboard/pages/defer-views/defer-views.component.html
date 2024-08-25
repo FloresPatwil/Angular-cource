@@ -1,0 +1,41 @@
+<app-title title="Defer Views / Blocks"></app-title>
+<p>Cinponente bloqueante! => Con heavy loader slow component de Shared</p>
+<section class="grid grid-cols-1 ">
+    
+    @defer () { 
+        <!-- Bloques diferidos -->
+      <app-heavy-loaders-slow cssClass="bg-blue-500"/>
+    } @placeholder {
+        <p class="h-[600px] w-full bg-gradient-to-r from-purple-200 to-cyan-400 animate-pulse">
+          Placeholder Cargando... marmota...
+        </p>
+    }
+    
+    @defer (on idle) { 
+        <!-- Bloques diferidos -->
+      <app-heavy-loaders-slow cssClass="bg-red-500"/>
+    } @placeholder {
+        <p class="h-[600px] w-full bg-gradient-to-r from-gray-200 to-blue-400 animate-pulse">
+            Placeholder Cargando... marmota...
+        </p>
+    }
+
+    @defer (on viewport) { 
+        <!-- Bloques diferidos -->
+      <app-heavy-loaders-slow cssClass="bg-purple-500"/>
+    } @placeholder {
+        <p class="h-[600px] w-full bg-gradient-to-r from-gray-200 to-green-400 animate-pulse">
+            Placeholder Cargando... marmota...
+        </p>
+    }
+
+    @defer (on viewport) { 
+      <!-- Bloques diferidos -->
+      <app-heavy-loaders-slow cssClass="bg-purple-500"/>
+    } @placeholder {
+        <p class="h-[600px] w-full bg-gradient-to-r from-gray-200 to-green-400 animate-pulse">
+            Placeholder Cargando... marmota...
+        </p>
+    }
+    
+</section>
